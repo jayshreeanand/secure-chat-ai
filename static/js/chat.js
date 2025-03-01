@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 <div class="message-appear bg-gray-100 rounded-2xl py-3 px-4 max-w-[80%]">
-                    <p class="text-gray-800">${formatMessage(message)}</p>
+                    <div class="text-gray-800 formatted-message">${formatMessage(message)}</div>
                 </div>
             `;
         }
@@ -75,6 +75,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function processAIResponse(response) {
+        // Remove any formatting instructions
+        response = response.replace(/Format before showing to user\s*/i, '');
+        
         // Remove content between <think> tags
         return response.replace(/<think>[\s\S]*?<\/think>/g, '').trim();
     }
@@ -89,8 +92,34 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function formatMessage(message) {
-        // Convert line breaks to <br> tags
-        return escapeHtml(message).replace(/\\n/g, '<br>');
+        // First escape HTML
+        let formatted = escapeHtml(message);
+        
+        // Convert markdown-style formatting
+        
+        // Bold text (either ** or __)
+        formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        formatted = formatted.replace(/__(.*?)__/g, '<strong>$1</strong>');
+        
+        // Italic text (either * or _)
+        formatted = formatted.replace(/\*(.*?)\*/g, '<em>$1</em>');
+        formatted = formatted.replace(/_(.*?)_/g, '<em>$1</em>');
+        
+        // Links [text](url)
+        formatted = formatted.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-primary-600 hover:underline" target="_blank">$1</a>');
+        
+        // Line breaks
+        formatted = formatted.replace(/\n/g, '<br>');
+        
+        // Lists (simple implementation)
+        formatted = formatted.replace(/- (.*?)(?=\n|$)/g, '<li>$1</li>');
+        
+        // Wrap lists in ul tags if there are list items
+        if (formatted.includes('<li>')) {
+            formatted = formatted.replace(/(<li>.*?<\/li>)+/g, '<ul class="list-disc pl-5 my-2">$&</ul>');
+        }
+        
+        return formatted;
     }
 
     async function sendMessage() {
