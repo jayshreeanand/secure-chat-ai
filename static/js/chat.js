@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
         typingDiv.className = 'flex mb-4 typing-indicator-container';
         typingDiv.innerHTML = `
             <div class="flex-shrink-0 mr-3">
-                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 flex items-center justify-center">
-                    <span class="text-white font-bold">TC</span>
+                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary-600 to-secondary-600 flex items-center justify-center">
+                    <span class="text-white font-bold">SC</span>
                 </div>
             </div>
             <div class="bg-gray-100 rounded-2xl py-3 px-4 max-w-[80%]">
@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             messageDiv.innerHTML = `
                 <div class="flex-shrink-0 mr-3">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 flex items-center justify-center">
-                        <span class="text-white font-bold">TC</span>
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary-600 to-secondary-600 flex items-center justify-center">
+                        <span class="text-white font-bold">SC</span>
                     </div>
                 </div>
                 <div class="message-appear bg-gray-100 rounded-2xl py-3 px-4 max-w-[80%]">
@@ -157,14 +157,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (data && data.response) {
                     addMessage(data.response, false);
                 } else {
-                    addMessage("Sorry, I received an empty response. Please try again or contact us directly at support@techconnect.com.", false);
+                    addMessage("Sorry, I received an empty response. Please try again or contact us directly at support@securechat.ai.", false);
                 }
             }, 500);
             
         } catch (error) {
             console.error('Error:', error);
             setTimeout(() => {
-                addMessage('Sorry, there was an error processing your request. Please try again or contact us at support@techconnect.com.', false);
+                addMessage('Sorry, there was an error processing your request. Please try again or contact us at support@securechat.ai.', false);
             }, 500);
         } finally {
             setTimeout(() => {
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             await fetch('/reset', { method: 'POST' });
             chatContainer.innerHTML = '';
-            addMessage('Hello! Welcome to TechConnect Support. How can I help you today?', false);
+            addMessage('Hello! Welcome to SecureChat AI support. How can I assist you today?', false);
         } catch (error) {
             console.error('Error resetting chat:', error);
         }

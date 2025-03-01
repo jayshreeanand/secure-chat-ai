@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechConnect Support</title>
+    <title>SecureChat AI</title>
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Custom Tailwind Config -->
@@ -14,27 +14,27 @@
                     colors: {
                         primary: {
                             50: '#f0f7ff',
-                            100: '#e0eefe',
-                            200: '#bae0fd',
-                            300: '#7ac6fd',
-                            400: '#36a6f9',
-                            500: '#0c87eb',
-                            600: '#0068cc',
-                            700: '#0054a6',
-                            800: '#00468a',
-                            900: '#003c73',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
                         },
                         secondary: {
-                            50: '#f5f7fa',
-                            100: '#ebeef5',
-                            200: '#d2d9e7',
-                            300: '#a7b7d1',
-                            400: '#7590b5',
-                            500: '#5272a0',
-                            600: '#3e5985',
-                            700: '#34496c',
-                            800: '#2d3e5a',
-                            900: '#28354d',
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
                         },
                     }
                 }
@@ -76,28 +76,28 @@
         <!-- Header -->
         <header class="mb-6">
             <div class="flex items-center justify-center mb-4">
-                <div class="bg-gradient-to-r from-primary-600 to-secondary-500 p-3 rounded-full">
+                <div class="bg-gradient-to-r from-primary-600 to-secondary-600 p-3 rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                     </svg>
                 </div>
             </div>
-            <h1 class="text-3xl font-bold text-center text-gray-800 mb-2">TechConnect Support</h1>
-            <p class="text-center text-gray-600 max-w-xl mx-auto">Get help with your products, orders, and technical issues. Our support team is here to assist you.</p>
+            <h1 class="text-3xl font-bold text-center text-gray-800 mb-2">SecureChat AI</h1>
+            <p class="text-center text-gray-600 max-w-xl mx-auto"> A secure, AI-powered customer support agent that ensures privacy and confidentiality in every conversation. Built on Secret AI for businesses that value data protection.</p>
         </header>
         
         <!-- Chat Container -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
             <!-- Chat Messages -->
             <div id="chat-container" class="p-4 h-[500px] overflow-y-auto">
                 <div class="flex mb-4">
                     <div class="flex-shrink-0 mr-3">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 flex items-center justify-center">
-                            <span class="text-white font-bold">TC</span>
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary-600 to-secondary-600 flex items-center justify-center">
+                            <span class="text-white font-bold">SC</span>
                         </div>
                     </div>
                     <div class="message-appear bg-gray-100 rounded-2xl py-3 px-4 max-w-[80%]">
-                        <p class="text-gray-800">Hello! Welcome to TechConnect Support. How can I help you today?</p>
+                        <p class="text-gray-800">Hello! Welcome to SecureChat AI support. How can I assist you today?</p>
                     </div>
                 </div>
             </div>
@@ -109,18 +109,19 @@
                         type="text" 
                         id="user-input" 
                         class="flex-1 border border-gray-300 rounded-l-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" 
-                        placeholder="Type your question here..."
+                        placeholder="Type your message securely..."
                     >
                     <button 
                         id="send-btn" 
-                        class="bg-gradient-to-r from-primary-600 to-primary-700 text-white py-3 px-6 rounded-r-lg hover:from-primary-700 hover:to-primary-800 transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+                        class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-3 px-6 rounded-r-lg hover:from-primary-700 hover:to-secondary-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path d="M3.105 2.289a.75.75 0 00-.826.95l1.414 4.925A1.5 1.5 0 005.135 9.25h6.115a.75.75 0 010 1.5H5.135a1.5 1.5 0 00-1.442 1.086l-1.414 4.926a.75.75 0 00.826.95 28.896 28.896 0 0015.293-7.154.75.75 0 000-1.115A28.897 28.897 0 003.105 2.289z" />
                         </svg>
                     </button>
                 </div>
-                <div class="flex justify-between mt-3">
+                <div class="text-center text-xs text-gray-500 mt-2">Powered by Secret AI</div>
+                <div class="flex justify-between mt-2">
                     <button 
                         id="reset-btn" 
                         class="text-gray-600 text-sm flex items-center hover:text-primary-600 transition duration-300"
@@ -130,14 +131,14 @@
                         </svg>
                         New Conversation
                     </button>
-                    <p class="text-xs text-gray-500">Powered by Secret AI</p>
+                    <p class="text-xs text-gray-500">End-to-end encrypted</p>
                 </div>
             </div>
         </div>
         
         <!-- Footer -->
         <footer class="mt-8 text-center text-gray-500 text-sm">
-            <p>© 2025 TechConnect. For urgent issues, call us at 1-800-TECH-HELP.</p>
+            <p>© 2025 SecureChat AI. Your privacy is our priority.</p>
         </footer>
     </div>
 

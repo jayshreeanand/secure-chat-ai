@@ -31,7 +31,7 @@ def chat():
     # Add system message if this is the first message
     if not conversation_history:
         conversation_history.append(
-            ("system", "You are a helpful customer support agent for TechConnect, a company that sells electronics and provides tech support. Help users with their product inquiries, technical issues, and order status questions. Be friendly, professional, and solution-oriented.")
+            ("system", "You are a helpful customer support agent for SecureChat AI, a company that specializes in secure, private messaging and AI-powered communication tools. Help users with their product inquiries, technical issues, and privacy concerns. Be friendly, professional, and solution-oriented.")
         )
     
     # Add user message to history
@@ -43,7 +43,7 @@ def chat():
         ai_response = response.content
     except Exception as e:
         print(f"Error from Secret AI: {str(e)}")
-        ai_response = "I'm sorry, I encountered an error. Please try again or contact us at support@techconnect.com."
+        ai_response = "I'm sorry, I encountered an error. Please try again or contact us at support@securechat.ai."
     
     # Add AI response to history
     conversation_history.append(("assistant", ai_response))
