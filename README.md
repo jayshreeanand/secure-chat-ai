@@ -41,7 +41,13 @@ Chat Window
 <img width="1187" alt="Screenshot 2025-03-01 at 8 52 50 PM" src="https://github.com/user-attachments/assets/82624fd4-a8d9-41d0-bcf2-8c355866c7c0" />
 <img width="1252" alt="Screenshot 2025-03-01 at 8 52 36 PM" src="https://github.com/user-attachments/assets/670a93c6-387a-46da-9581-7ef03f10e18b" />
 
-
+###Use Cases
+- Personal Privacy-Focused Chat – Communicate securely without exposing personal data.
+- Business Communications – Enable confidential discussions without risk of data leakage.
+- Anonymous Therapy & Support – Offer encrypted mental health or crisis support services.
+- Decentralized Customer Support – Automate customer service while ensuring private user interactions.
+- Whistleblower & Anonymous Reporting – Report misconduct securely with no identity trace.
+- Decentralized Work Collaboration – Enable private team discussions for sensitive projects.
 
 ## Getting Started
 
