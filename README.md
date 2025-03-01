@@ -27,6 +27,10 @@ SecureChat AI is a secure, privacy-focused chat application powered by AI and bu
 - **AI**: Secret AI SDK
 - **Security**: Secret Network, end-to-end encryption
 
+## Demo
+![secure-chat-gif](https://github.com/user-attachments/assets/4e77b4ae-d97a-47c8-b3b8-337b295c1b24)
+
+
 ## Screenshots
 
 Home Page
