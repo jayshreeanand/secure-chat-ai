@@ -3,14 +3,84 @@ document.addEventListener('DOMContentLoaded', function() {
     const userInput = document.getElementById('user-input');
     const sendBtn = document.getElementById('send-btn');
     const resetBtn = document.getElementById('reset-btn');
+    
+    // Focus input on page load
+    userInput.focus();
+
+    function createTypingIndicator() {
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'flex mb-4 typing-indicator-container';
+        typingDiv.innerHTML = `
+            <div class="flex-shrink-0 mr-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 flex items-center justify-center">
+                    <span class="text-white font-bold">AI</span>
+                </div>
+            </div>
+            <div class="bg-gray-100 rounded-2xl py-3 px-4 max-w-[80%]">
+                <div class="typing-indicator flex space-x-1">
+                    <span class="w-2 h-2 bg-gray-500 rounded-full"></span>
+                    <span class="w-2 h-2 bg-gray-500 rounded-full"></span>
+                    <span class="w-2 h-2 bg-gray-500 rounded-full"></span>
+                </div>
+            </div>
+        `;
+        return typingDiv;
+    }
+
+    function removeTypingIndicator() {
+        const indicator = document.querySelector('.typing-indicator-container');
+        if (indicator) {
+            indicator.remove();
+        }
+    }
 
     function addMessage(message, isUser) {
+        removeTypingIndicator();
+        
         const messageDiv = document.createElement('div');
-        messageDiv.classList.add('message');
-        messageDiv.classList.add(isUser ? 'user-message' : 'ai-message');
-        messageDiv.textContent = message;
+        messageDiv.className = 'flex mb-4';
+        
+        if (isUser) {
+            messageDiv.innerHTML = `
+                <div class="flex-grow"></div>
+                <div class="message-appear bg-primary-100 rounded-2xl py-3 px-4 max-w-[80%] text-right">
+                    <p class="text-gray-800">${escapeHtml(message)}</p>
+                </div>
+                <div class="flex-shrink-0 ml-3">
+                    <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center">
+                        <span class="text-white font-bold">You</span>
+                    </div>
+                </div>
+            `;
+        } else {
+            messageDiv.innerHTML = `
+                <div class="flex-shrink-0 mr-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary-600 to-secondary-500 flex items-center justify-center">
+                        <span class="text-white font-bold">AI</span>
+                    </div>
+                </div>
+                <div class="message-appear bg-gray-100 rounded-2xl py-3 px-4 max-w-[80%]">
+                    <p class="text-gray-800">${formatMessage(message)}</p>
+                </div>
+            `;
+        }
+        
         chatContainer.appendChild(messageDiv);
         chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+    
+    function escapeHtml(unsafe) {
+        return unsafe
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+    
+    function formatMessage(message) {
+        // Convert line breaks to <br> tags
+        return escapeHtml(message).replace(/\\n/g, '<br>');
     }
 
     async function sendMessage() {
@@ -21,6 +91,10 @@ document.addEventListener('DOMContentLoaded', function() {
         userInput.value = '';
         userInput.disabled = true;
         sendBtn.disabled = true;
+        
+        // Show typing indicator
+        chatContainer.appendChild(createTypingIndicator());
+        chatContainer.scrollTop = chatContainer.scrollHeight;
 
         try {
             console.log("Sending message:", message);
@@ -39,18 +113,26 @@ document.addEventListener('DOMContentLoaded', function() {
             const data = await response.json();
             console.log("Received response:", data);
             
-            if (data && data.response) {
-                addMessage(data.response, false);
-            } else {
-                addMessage("Sorry, I received an empty response. Please try again.", false);
-            }
+            // Small delay to make the typing indicator visible
+            setTimeout(() => {
+                if (data && data.response) {
+                    addMessage(data.response, false);
+                } else {
+                    addMessage("Sorry, I received an empty response. Please try again.", false);
+                }
+            }, 500);
+            
         } catch (error) {
             console.error('Error:', error);
-            addMessage('Sorry, there was an error processing your request.', false);
+            setTimeout(() => {
+                addMessage('Sorry, there was an error processing your request.', false);
+            }, 500);
         } finally {
-            userInput.disabled = false;
-            sendBtn.disabled = false;
-            userInput.focus();
+            setTimeout(() => {
+                userInput.disabled = false;
+                sendBtn.disabled = false;
+                userInput.focus();
+            }, 500);
         }
     }
 
