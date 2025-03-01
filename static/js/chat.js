@@ -69,4 +69,4 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'Enter') sendMessage();
     });
     resetBtn.addEventListener('click', resetChat);
-}); 
+});

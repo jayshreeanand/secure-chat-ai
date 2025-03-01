@@ -1,7 +1,11 @@
 import os
 
 def create_file(path, content):
-    os.makedirs(os.path.dirname(path), exist_ok=True)
+    # Only try to create directories if the path contains a directory component
+    dir_name = os.path.dirname(path)
+    if dir_name:
+        os.makedirs(dir_name, exist_ok=True)
+    
     with open(path, 'w') as f:
         f.write(content)
     print(f"Created {path}")

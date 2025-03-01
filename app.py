@@ -61,10 +61,4 @@ def reset_conversation():
     return jsonify({'status': 'success'})
 
 if __name__ == '__main__':
-    # Create necessary directories
-    os.makedirs('templates', exist_ok=True)
-    os.makedirs('static/css', exist_ok=True)
-    os.makedirs('static/js', exist_ok=True)
-    
-    # Run the Flask app
-    app.run(debug=True) 
+    app.run(debug=True)
