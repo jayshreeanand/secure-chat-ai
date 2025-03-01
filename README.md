@@ -1,10 +1,14 @@
 # SecureChat AI
 
-![SecureChat AI Logo](static/images/logo.png)
+<img width="357" alt="Screenshot 2025-03-01 at 8 54 13 PM" src="https://github.com/user-attachments/assets/8bc2968d-317a-45f7-a09a-13f44bb9f7ae" />
+
 
 ## Overview
 
 SecureChat AI is a secure, privacy-focused chat application powered by AI and built on the Secret Network. It provides end-to-end encrypted communication with intelligent AI assistance while maintaining the highest standards of privacy and security.
+
+<img width="1252" alt="Screenshot 2025-03-01 at 8 52 36 PM" src="https://github.com/user-attachments/assets/dc894475-1135-43ed-880c-9630df1c9400" />
+
 
 ## Features
 
@@ -23,12 +27,55 @@ SecureChat AI is a secure, privacy-focused chat application powered by AI and bu
 - **AI**: Secret AI SDK
 - **Security**: Secret Network, end-to-end encryption
 
+## Screenshots
+
+Home Page
+<img width="1654" alt="Screenshot 2025-03-01 at 8 43 42 PM" src="https://github.com/user-attachments/assets/215dfa49-2f7a-4169-b594-e59403671fac" />
+
+Features
+<img width="1680" alt="Screenshot 2025-03-01 at 8 43 52 PM" src="https://github.com/user-attachments/assets/f2f66d2f-1d9b-493c-9f33-1d535f284f65" />
+
+<img width="1640" alt="Screenshot 2025-03-01 at 8 57 05 PM" src="https://github.com/user-attachments/assets/a38b6fb7-5c3c-44af-af8d-bd4bd8a27ddb" />
+
+Chat Window
+<img width="1187" alt="Screenshot 2025-03-01 at 8 52 50 PM" src="https://github.com/user-attachments/assets/82624fd4-a8d9-41d0-bcf2-8c355866c7c0" />
+<img width="1252" alt="Screenshot 2025-03-01 at 8 52 36 PM" src="https://github.com/user-attachments/assets/670a93c6-387a-46da-9581-7ef03f10e18b" />
+
+
+
 ## Getting Started
+
+
 
 ### Prerequisites
 
 - Python 3.8 or higher
 - pip (Python package installer)
+- 
+#### Install Requirements
+To follow along with the guide, we will be using Anaconda and Python 3.12. 
+
+Install Anaconda for Windows, Mac, or Linux.
+
+Clone the Secret AI getting started repository here:
+
+
+```git clone https://github.com/SecretFoundation/secret-ai-getting-started.git```
+Create Anaconda virtual environment
+In your text editor, create an Anaconda virtual environment with Python 3.12:
+
+
+```conda create -n menv python=3.12```
+Activate the virtual environment: 
+
+
+```conda activate menv```
+Install Secret AI dependencies
+
+```pip install -r requirements.txt && pip install 'secret-sdk>=1.8.1' && pip install secret-ai-sdk```
+Set developer key
+
+```export SECRET_AI_API_KEY=YOUR API KEY```
 
 ### Installation
 
@@ -72,4 +119,3 @@ SecureChat AI is a secure, privacy-focused chat application powered by AI and bu
    http://localhost:5000
    ```
 
-## Project Structure
