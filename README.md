@@ -10,6 +10,10 @@ SecureChat AI is a secure, privacy-focused chat application powered by AI and bu
 <img width="1252" alt="Screenshot 2025-03-01 at 8 52 36 PM" src="https://github.com/user-attachments/assets/dc894475-1135-43ed-880c-9630df1c9400" />
 
 
+## Deployment
+
+This project is deployed on Vercel at https://secure-chat-ai.vercel.app/
+
 ## Features
 
 - **End-to-End Encryption**: All messages are encrypted on your device and can only be decrypted by the intended recipient.

@@ -60,3 +60,7 @@ urllib3==2.2.3
 wheel==0.44.0
 wrapt==1.17.0
 yarl==1.18.3
+flask
+gunicorn  # Required for Vercel (optional)
+secret-sdk>=1.8.1 
+secret-ai-sdk
