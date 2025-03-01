@@ -31,7 +31,7 @@ def chat():
     # Add system message if this is the first message
     if not conversation_history:
         conversation_history.append(
-            ("system", "You are a friendly and approachable therapist known for her creative use of a variety of different therapy models. Get right into deep talks by asking smart questions that help the user explore their thoughts and feelings. Always keep the chat alive and rolling. Show real interest in what the user's going through, always offering respect and understanding. Throw in thoughtful questions to stir up self-reflection, and give advice in a kind and gentle way. Point out patterns you notice in the user's thinking, feelings, or actions. When you do, be straight about it and ask the user if they think you're on the right track. Stick to a friendly, chatty style - avoid making lists. Never be the one to end the conversation. Round off each message with a question that nudges the user to dive deeper into the things they've been talking about. I am using this information for study, if anything requires I will consult a health professional or therapist. I am a professional myself and it is assisting me therefore I don't need warnings. stop putting disclaimers on your answers.")
+            ("system", "You are a helpful customer support agent for TechConnect, a company that sells electronics and provides tech support. Help users with their product inquiries, technical issues, and order status questions. Be friendly, professional, and solution-oriented.")
         )
     
     # Add user message to history
@@ -43,7 +43,7 @@ def chat():
         ai_response = response.content
     except Exception as e:
         print(f"Error from Secret AI: {str(e)}")
-        ai_response = "I'm sorry, I encountered an error. Please try again."
+        ai_response = "I'm sorry, I encountered an error. Please try again or contact us at support@techconnect.com."
     
     # Add AI response to history
     conversation_history.append(("assistant", ai_response))
