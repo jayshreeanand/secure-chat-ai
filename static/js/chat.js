@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
             console.log("Sending message:", message);
-            const response = await fetch('/chat', {
+            const response = await fetch('/api/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function resetChat() {
         try {
-            await fetch('/reset', { method: 'POST' });
+            await fetch('/api/reset', { method: 'POST' });
             chatContainer.innerHTML = '';
             addMessage('Hello! Welcome to SecureChat AI support. How can I assist you today?', false);
         } catch (error) {

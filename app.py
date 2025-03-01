@@ -22,9 +22,13 @@ conversation_history = []
 
 @app.route('/')
 def index():
+    return render_template('landing.html')
+
+@app.route('/chat')
+def chat_page():
     return render_template('index.html')
 
-@app.route('/chat', methods=['POST'])
+@app.route('/api/chat', methods=['POST'])
 def chat():
     user_message = request.json.get('message', '')
     
@@ -54,7 +58,7 @@ def chat():
     
     return jsonify({'response': ai_response})
 
-@app.route('/reset', methods=['POST'])
+@app.route('/api/reset', methods=['POST'])
 def reset_conversation():
     global conversation_history
     conversation_history = []

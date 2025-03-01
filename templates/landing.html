@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureChat AI - Private, Secure, Intelligent Communication</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f7ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom styles -->
+    <style>
+        .gradient-text {
+            background: linear-gradient(to right, #0284c7, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-pattern {
+            background-color: #f8fafc;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%230ea5e9' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="bg-gradient-to-r from-primary-600 to-secondary-600 p-2 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                </div>
+                <span class="font-bold text-xl">SecureChat AI</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="text-gray-600 hover:text-primary-600 transition">Features</a>
+                <a href="#how-it-works" class="text-gray-600 hover:text-primary-600 transition">How It Works</a>
+                <a href="#security" class="text-gray-600 hover:text-primary-600 transition">Security</a>
+                <a href="#faq" class="text-gray-600 hover:text-primary-600 transition">FAQ</a>
+            </div>
+            <a href="/chat" class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-6 py-2 rounded-full font-medium hover:from-primary-700 hover:to-secondary-700 transition shadow-md">
+                Try Now
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern py-20 md:py-32">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                        Secure AI-Powered <span class="gradient-text">Communication</span> for Everyone
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Experience the future of private messaging with end-to-end encryption and intelligent AI assistance, powered by Secret AI technology.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="/chat" class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-8 py-3 rounded-full font-medium hover:from-primary-700 hover:to-secondary-700 transition shadow-md text-center">
+                            Start Chatting Now
+                        </a>
+                        <a href="#how-it-works" class="bg-white text-primary-600 border border-primary-600 px-8 py-3 rounded-full font-medium hover:bg-primary-50 transition text-center">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-10">
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-200">
+                        <div class="bg-gradient-to-r from-primary-600 to-secondary-600 p-4 text-white">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-3">
+                                    <span class="font-bold">SC</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">SecureChat AI</h3>
+                                    <p class="text-xs opacity-80">End-to-end encrypted</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 h-[300px] overflow-y-auto bg-gray-50">
+                            <div class="flex mb-4">
+                                <div class="flex-shrink-0 mr-3">
+                                    <div class="w-8 h-8 rounded-full bg-gradient-to-r from-primary-600 to-secondary-600 flex items-center justify-center">
+                                        <span class="text-white font-bold text-sm">SC</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white rounded-2xl py-3 px-4 max-w-[80%] shadow-sm">
+                                    <p class="text-gray-800">Hello! Welcome to SecureChat AI. How can I assist you today?</p>
+                                </div>
+                            </div>
+                            <div class="flex mb-4 justify-end">
+                                <div class="bg-primary-100 rounded-2xl py-3 px-4 max-w-[80%] text-right shadow-sm">
+                                    <p class="text-gray-800">Can you tell me about your security features?</p>
+                                </div>
+                                <div class="flex-shrink-0 ml-3">
+                                    <div class="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center">
+                                        <span class="text-white font-bold text-sm">You</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex mb-4">
+                                <div class="flex-shrink-0 mr-3">
+                                    <div class="w-8 h-8 rounded-full bg-gradient-to-r from-primary-600 to-secondary-600 flex items-center justify-center">
+                                        <span class="text-white font-bold text-sm">SC</span>
+                                    </div>
+                                </div>
+                                <div class="bg-white rounded-2xl py-3 px-4 max-w-[80%] shadow-sm">
+                                    <p class="text-gray-800">Our platform uses end-to-end encryption to ensure your messages are secure. We also employ advanced AI technology from Secret AI that processes your data privately. Your conversations are never stored on our servers.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-200 p-4 bg-white">
+                            <div class="flex items-center">
+                                <input type="text" class="flex-1 border border-gray-300 rounded-l-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent" placeholder="Type your message securely...">
+                                <button class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-2 px-4 rounded-r-lg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M3.105 2.289a.75.75 0 00-.826.95l1.414 4.925A1.5 1.5 0 005.135 9.25h6.115a.75.75 0 010 1.5H5.135a1.5 1.5 0 00-1.442 1.086l-1.414 4.926a.75.75 0 00.826.95 28.896 28.896 0 0015.293-7.154.75.75 0 000-1.115A28.897 28.897 0 003.105 2.289z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="text-center text-xs text-gray-500 mt-2">Powered by Secret AI</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose SecureChat AI?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our platform combines cutting-edge security with advanced AI capabilities to deliver a messaging experience like no other.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-md transition">
+                    <div class="bg-gradient-to-r from-primary-600 to-secondary-600 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">End-to-End Encryption</h3>
+                    <p class="text-gray-600">
+                        Your messages are encrypted from the moment you send them until they're received, ensuring only you and your recipient can read them.
+                    </p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-md transition">
+                    <div class="bg-gradient-to-r from-primary-600 to-secondary-600 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Powered by Secret AI</h3>
+                    <p class="text-gray-600">
+                        Leveraging advanced AI technology that processes your data privately and securely, providing intelligent responses without compromising privacy.
+                    </p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-md transition">
+                    <div class="bg-gradient-to-r from-primary-600 to-secondary-600 w-14 h-14 rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Real-Time Assistance</h3>
+                    <p class="text-gray-600">
+                        Get instant, intelligent responses to your questions and concerns, with an AI assistant that learns and adapts to your needs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">How SecureChat AI Works</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our platform combines state-of-the-art encryption with advanced AI to create a secure and intelligent messaging experience.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center text-2xl font-bold mb-6">1</div>
+                    <h3 class="text-xl font-bold mb-3">Ask a Question</h3>
+                    <p class="text-gray-600">
+                        Type your question or concern in the secure chat interface. Your message is immediately encrypted.
+                    </p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center text-2xl font-bold mb-6">2</div>
+                    <h3 class="text-xl font-bold mb-3">Secure Processing</h3>
+                    <p class="text-gray-600">
+                        Your encrypted message is processed by our Secret AI technology, which maintains privacy throughout the entire process.
+                    </p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-16 h-16 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center text-2xl font-bold mb-6">3</div>
+                    <h3 class="text-xl font-bold mb-3">Receive Response</h3>
+                    <p class="text-gray-600">
+                        Get an intelligent, helpful response that addresses your specific needs, all while maintaining end-to-end security.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section id="security" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Your Privacy Is Our Priority</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        At SecureChat AI, we believe that privacy is a fundamental right. That's why we've built our platform with security at its core.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-gray-700">End-to-end encryption ensures only you and your recipient can read your messages</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-gray-700">No message storage on our servers - your conversations disappear when you're done</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-gray-700">Secret AI technology processes your data privately and securely</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-gray-700">Regular security audits and updates to maintain the highest standards</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 md:pl-10">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Security Illustration" class="rounded-xl shadow-lg w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Find answers to common questions about SecureChat AI and our secure messaging platform.
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <h3 class="text-xl font-bold mb-3">How secure is SecureChat AI?</h3>
+                    <p class="text-gray-600">
+                        SecureChat AI uses end-to-end encryption, meaning your messages are encrypted on your device and can only be decrypted by the intended recipient. Our AI processing is done securely using Secret AI technology, ensuring your data remains private throughout.
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <h3 class="text-xl font-bold mb-3">Is my data stored on your servers?</h3>
+                    <p class="text-gray-600">
+                        No, we do not store your conversations on our servers. Once your session ends, your conversation history is deleted. This ensures maximum privacy and security for all users.
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <h3 class="text-xl font-bold mb-3">What is Secret AI technology?</h3>
+                    <p class="text-gray-600">
+                        Secret AI is a cutting-edge technology that allows AI processing to occur while maintaining privacy and security. It enables our platform to provide intelligent responses without compromising the confidentiality of your messages.
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <h3 class="text-xl font-bold mb-3">Can I use SecureChat AI on multiple devices?</h3>
+                    <p class="text-gray-600">
+                        Yes, SecureChat AI is accessible from any device with a web browser. Your conversations are not tied to a specific device, allowing you to use our platform wherever you are.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary-600 to-secondary-600 text-white">
+        <div class="container mx-auto px-4 md:px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Experience Secure AI Communication?</h2>
+            <p class="text-xl opacity-90 mb-8 max-w-3xl mx-auto">
+                Join thousands of users who trust SecureChat AI for private, secure, and intelligent messaging.
+            </p>
+            <a href="/chat" class="bg-white text-primary-700 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition shadow-md inline-block">
+                Start Chatting Now
+            </a>
+            <p class="mt-6 opacity-80">No registration required. Start chatting instantly.</p>
+        </div>
+    </section>
+</body>
+</html> 
