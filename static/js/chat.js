@@ -37,6 +37,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function addMessage(message, isUser) {
         removeTypingIndicator();
         
+        // Process the message to remove <think> tags if present
+        if (!isUser) {
+            message = processAIResponse(message);
+        }
+        
         const messageDiv = document.createElement('div');
         messageDiv.className = 'flex mb-4';
         
@@ -67,6 +72,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         chatContainer.appendChild(messageDiv);
         chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+    
+    function processAIResponse(response) {
+        // Remove content between <think> tags
+        return response.replace(/<think>[\s\S]*?<\/think>/g, '').trim();
     }
     
     function escapeHtml(unsafe) {
